@@ -34,6 +34,8 @@
 
     // default routs
     Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
+    Router::add('^[a-z]{2}$', ['controller' => 'Tz']);
+    Router::add('^[0-9]$', ['controller' => 'Main', 'action' => 'viewone']);
     Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
 
 

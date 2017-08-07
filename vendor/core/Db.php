@@ -13,6 +13,8 @@ class Db{
 
     protected $pdo;
     protected static $instance;
+    public static $countSql;
+    public static $queries = [];
 
     protected function __construct(){
         $db = require ROOT . '/config/config_db.php';
@@ -33,15 +35,15 @@ class Db{
     private function __clone(){}
 
     // CREATE ...
-    public function execute($sql){
+    public function execute($sql,$params = []){
         $stmt = $this->pdo->prepare($sql);
-        return $stmt->execute();
+        return $stmt->execute($params);
     }
 
     // SELECT ...
-    public function query($sql){
+    public function query($sql, $params = []){
         $stmt = $this->pdo->prepare($sql);
-        $res = $stmt->execute();
+        $res = $stmt->execute($params);
         if ($res !== false){
             return $stmt->fetchAll();
         }

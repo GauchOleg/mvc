@@ -12,9 +12,42 @@
             <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+            <nav class="navbar navbar-default header">
+                <div class="container ">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nb_collapse" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">Задачник</a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="nb_collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/task/new">Создать новую задачу</a></li>
+                            <!--li class="disabled" >
+                                <a 'href='#' >Редактировать</a>
+                            </li-->
+                            <li><a href="/tz">Тех. задание</a></li></li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>                   <a href="/login/"> <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Войти как админ</a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </head>
         <body>
-            <h3><?php if (isset($title)){echo $title;}?></h3>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3><?php if (isset($title)){echo $title;}?></h3>
+                    </div>
+                </div>
+            </div>
             <?=$content?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="../../../public/bootstrap/js/bootstrap.min.js"></script>
